@@ -1,16 +1,16 @@
-import funcao from "./mod";
+// import funcao from "./mod";
 
-funcao();
+// funcao();
 
 // // const mensagem: string = "Hello World :(";
 
 // // console.log(mensagem);
 
-// // export default function greatName(name: string) {
-// //   return `Olá ${name}`;
-// // }
+// export default function greatName(name: string) {
+//     return `Olá ${name}`;
+// }
 
-// // console.log(greatName("Stherzada"));
+// console.log(greatName("Stherzada"));
 
 // // const nome = "Stherzada";
 
