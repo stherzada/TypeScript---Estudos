@@ -39,3 +39,4 @@ const enterprise1 = new Twitch();
 const collaborators1 = new Collaborators("Sther", "zada");
 enterprise1.addColaborator(collaborators1);
 console.log(enterprise1.getName(), enterprise1.name);
+console.log(enterprise1);
