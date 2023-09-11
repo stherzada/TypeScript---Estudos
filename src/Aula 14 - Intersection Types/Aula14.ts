@@ -24,3 +24,6 @@ console.log(person);
 
 //Module mode
 export { person };
+
+
+
