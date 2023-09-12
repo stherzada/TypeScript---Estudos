@@ -20,9 +20,9 @@ export class DataBase{
 
     //criado nossa instância
     static getDatabase(host: string,  user:string, password: string): DataBase{
-
-        if(DataBase.database) return DataBase.database
-
+        if(DataBase.database){
+            console.log("This is my instance")
+            return DataBase.database} 
         DataBase.database = new DataBase(host, user, password)
         return DataBase.database
     }
@@ -33,7 +33,10 @@ const database1 = DataBase.getDatabase('localhost', 'rest', '123342')
 database1.connect()
 
 
-// const database2 = ('localhost', 'rest', '123342')
+const database2 = DataBase.getDatabase('localhost', 'rest', '123342')
 
-// database2.connect()
+database2.connect()
 
+
+console.log(database1 === database2)
+     
