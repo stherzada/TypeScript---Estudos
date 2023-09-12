@@ -29,14 +29,20 @@ export class DataBase{
 }
 
 const database1 = DataBase.getDatabase('localhost', 'rest', '123342')
-
 database1.connect()
 
 
 const database2 = DataBase.getDatabase('localhost', 'rest', '123342')
-
 database2.connect()
 
+
+
+const database3 = DataBase.getDatabase('localhost', 'rest', '123342')
+database3.connect()
+
+
+const database4 = DataBase.getDatabase('localhost', 'rest', '123342')
+database3.connect()
 
 console.log(database1 === database2)
      
