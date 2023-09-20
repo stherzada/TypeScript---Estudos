@@ -1,21 +1,21 @@
-interface _Person {
+export default interface Person {
     name: string;
 }
-interface _Person {
+export default interface Person {
     lastname: string;
 }
-interface _Person {
+export default interface Person {
     andress: readonly string[];
 }
-interface _Person {
+export default interface Person {
     age: number;
 }
-const _person: _Person = {
+const person: Person = {
     name: "Sther",
     lastname: "Alves",
     andress: ["AAAAAA"],
     age: 23,
 };
 
-_person.age = 32;
-console.log(_person);
+person.age = 32;
+console.log(person);
