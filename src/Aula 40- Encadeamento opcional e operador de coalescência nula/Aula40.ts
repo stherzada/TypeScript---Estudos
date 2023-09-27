@@ -10,7 +10,7 @@ const archive: Archive = {
     // data: new Date(),
 };
 
-// o operador de coalescenência só verificar isso quando por null ou undefined
+// o operador de coalescenência só verificar isso quando por nullable ou undefined
 console.log(archive.data?.toDateString() ?? "EITAH, don't have a date");
 console.log(undefined ?? "2-EITAH, don't have a date");
 console.log(null ?? "3-EITAH, don't have a date");
