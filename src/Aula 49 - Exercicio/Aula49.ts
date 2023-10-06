@@ -28,7 +28,10 @@ export class VotationApp {
         for (const votation of this.votations) {
             console.log(votation.details);
             for (const votationOption of votation.votationOptions) {
-                console.log(votationOption.option);
+                console.log(
+                    votationOption.option,
+                    votationOption.numberOfvotes,
+                );
             }
         }
     }
@@ -38,6 +41,16 @@ const votationUno = new Votation("What is your favorite programming language?");
 votationUno.addVotationOptions({ option: "TypeScript", numberOfvotes: 0 });
 votationUno.addVotationOptions({ option: "JavaScript", numberOfvotes: 0 });
 votationUno.addVotationOptions({ option: "Python", numberOfvotes: 0 });
+
+votationUno.vote(2);
+votationUno.vote(1);
+votationUno.vote(1);
+votationUno.vote(1);
+votationUno.vote(0);
+votationUno.vote(0);
+votationUno.vote(0);
+votationUno.vote(0);
+votationUno.vote(0);
 
 const votationApp = new VotationApp();
 votationApp.addVotation(votationUno);
