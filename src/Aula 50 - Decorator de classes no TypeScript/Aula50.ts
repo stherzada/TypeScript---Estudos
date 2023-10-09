@@ -1,6 +1,5 @@
 // decorator são chamadas em determinadas partes do seu código
-// @decorator
-
+@decorator
 export class Animal {
     constructor(
         public name: string,
