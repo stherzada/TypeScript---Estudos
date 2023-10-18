@@ -1,18 +1,22 @@
 function decorator(
     classPrototype: any,
-    propertyKey: string,
-    descriptor: PropertyDescriptor,
-): PropertyDescriptor | void {
-    console.log(descriptor);
-    console.log(propertyKey);
-    console.log(classPrototype);
+    propertyKey: string | symbol | undefined,
+): any {
+    let valueProperty: any;
     return {
-        value: function (...args: any[]) {
-            return args[0].toUpperCase();
+        get: () => valueProperty,
+        set: (value: any) => {
+            if (typeof value === "string") {
+                valueProperty = value.split("").reverse().join("");
+                return;
+            }
+            valueProperty = value;
         },
     };
 }
+
 export class OnePeople {
+    @decorator
     name: string;
     lastname: string;
     age: number;
@@ -21,7 +25,7 @@ export class OnePeople {
         this.lastname = lastname;
         this.age = age;
     }
-    @decorator
+    /// decoradores nos parametros
     classMethod(msg: string): string {
         return `${this.name} ${this.lastname}: ${msg} `;
     }

@@ -1,28 +1,28 @@
 function decorator(
     classPrototype: any,
-    propertyKey: string,
-    descriptor: PropertyDescriptor,
-): PropertyDescriptor | void {
-    console.log(descriptor);
-    console.log(propertyKey);
+    propertyKey: string | symbol | undefined,
+    index: number,
+): void {
+    console.log(index);
     console.log(classPrototype);
-    return {
-        value: function (...args: any[]) {
-            return args[0].toUpperCase();
-        },
-    };
+    console.log(propertyKey);
 }
+
 export class OnePeople {
     name: string;
     lastname: string;
     age: number;
-    constructor(name: string, lastname: string, age: number) {
+    constructor(
+        @decorator name: string,
+        @decorator lastname: string,
+        age: number,
+    ) {
         this.name = name;
         this.lastname = lastname;
         this.age = age;
     }
-    @decorator
-    classMethod(msg: string): string {
+    /// decoradores nos parametros
+    classMethod(@decorator msg: string): string {
         return `${this.name} ${this.lastname}: ${msg} `;
     }
 
